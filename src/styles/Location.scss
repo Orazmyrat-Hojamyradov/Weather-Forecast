@@ -1,0 +1,33 @@
+.location-box {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 650px;
+  height: 200px;
+  background-color: tarnsparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+
+.temperature {
+  font-size: 143px;
+  color: white;
+}
+
+.location {
+  font-size: 60px;
+  color: white;
+}
+
+.date-time {
+    display: block;
+    font-size: 18px;
+    color: white;
+}
+
+.location-icon {
+    width: 70px;
+    height: 70px;
+}

@@ -4,6 +4,7 @@
   height: 200px;
   background-color: tarnsparent;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -12,7 +13,7 @@
 }
 
 .temperature {
-  font-size: 143px;
+  font-size: 90px;
   color: white;
 }
 
@@ -22,12 +23,12 @@
 }
 
 .date-time {
-    display: block;
-    font-size: 18px;
-    color: white;
+  display: block;
+  font-size: 1.75rem;
+  color: white;
 }
 
 .location-icon {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }

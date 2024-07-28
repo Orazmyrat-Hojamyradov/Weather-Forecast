@@ -1,14 +1,30 @@
-import "../styles/Location.scss"
+import "../styles/Location.scss";
+import useLocations from "../api/LocationsAPI";
+import LiveTime from "./LiveTime";
 
 export default function Location() {
+  const { currentConditionsQuery } = useLocations();
+  const { data: currentConditions, error, isLoading } = currentConditionsQuery;
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error fetching data</p>;
+  }
+
   return (
     <div className="location-box">
-      <div className="temperature">16°</div>
+      {currentConditions && (
+        <div className="temperature">
+          {currentConditions?.Temperature.Metric.Value}°
+          {currentConditions?.Temperature.Metric.Unit}
+        </div>
+      )}
       <div className="location-date-time">
-        <span className="location">London</span>
-        <span className="date-time">06:09 - Monday, 9 Sep ‘23</span>
+        <LiveTime />
       </div>
-      <img className="location-icon" src="icons/Cloudy.png" alt="" />
     </div>
   );
 }

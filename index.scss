@@ -1,14 +1,8 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
 
-    font-family: Arial, Helvetica, sans-serif;
-
-    &::-webkit-scrollbar { 
-        display: none;  /* Safari and Chrome */
-    }
+  font-family: Arial, Helvetica, sans-serif;
 }

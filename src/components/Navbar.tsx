@@ -1,4 +1,5 @@
 import "../styles/Navbar.scss";
+import Search from "./Search";
 
 export default function Navbar() {
   return (
@@ -6,10 +7,7 @@ export default function Navbar() {
       <div className="logo">
         <img src="icons/logo.svg" alt="weather logo" />
       </div>
-      <div className="input-box">
-        <input type="text" className="input" placeholder="Search Location..." />
-        <img className="search-icon" src="icons/fa_search.svg" alt="search-icon" />
-      </div>
+      <Search />
     </div>
   );
 }

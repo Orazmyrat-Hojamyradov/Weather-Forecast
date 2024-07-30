@@ -7,7 +7,9 @@ export default function Navbar() {
       <div className="logo">
         <img src="icons/logo.svg" alt="weather logo" />
       </div>
-      <Search />
+      <div className="mobile">
+        <Search />
+      </div>
     </div>
   );
 }

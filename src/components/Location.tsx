@@ -7,11 +7,11 @@ export default function Location() {
   const { data: currentConditions, error, isLoading } = currentConditionsQuery;
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <div className="loading">Loading...</div>;
   }
 
   if (error) {
-    return <p>Error fetching data</p>;
+    return <div className="loading">Error fetching data</div>;
   }
 
   return (

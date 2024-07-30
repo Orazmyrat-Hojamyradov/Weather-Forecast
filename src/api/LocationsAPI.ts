@@ -11,7 +11,6 @@ import {
 
 const API_KEY = "2FpbsbZkm2BVO6O4m9cBRi1kOs0JZkG0";
 
-
 async function fetchLocations(q: string): Promise<Location[]> {
   const response = await axios.get(
     `http://dataservice.accuweather.com/locations/v1/cities/autocomplete`,
@@ -24,7 +23,6 @@ async function fetchLocations(q: string): Promise<Location[]> {
   );
   return response.data;
 }
-
 
 async function fetchForecast(cityKey: number): Promise<Forecast> {
   const response = await axios.get(
@@ -53,13 +51,16 @@ async function fetchCurrentConditions(
   return response.data[0];
 }
 
-export default function useLocations(q?: any, Key?: any): UseLocationsReturn {
+export default function useLocations(
+  Key?: number,
+  q?: string
+): UseLocationsReturn {
   const { cityKey, setKey } = useStore((state) => ({
     cityKey: state.cityKey,
     setKey: state.setKey,
   }));
 
-  const locationsQuery = useQuery<Location[], unknown>({
+  const locationsQuery = useQuery<Location[], Error>({
     queryKey: ["locations", q],
     enabled: !!q,
     queryFn: () => fetchLocations(q!),
@@ -70,16 +71,16 @@ export default function useLocations(q?: any, Key?: any): UseLocationsReturn {
     if (locationsQuery.data && locationsQuery.data.length > 0) {
       setKey(Number(locationsQuery.data[0].Key));
     }
-  }, [locationsQuery.data]);
+  }, [locationsQuery.data, setKey]);
 
-  const forecastQuery = useQuery<Forecast, unknown>({
+  const forecastQuery = useQuery<Forecast, Error>({
     queryKey: ["forecast", cityKey],
     enabled: !!cityKey,
     queryFn: () => fetchForecast(cityKey),
     refetchOnWindowFocus: false,
   });
 
-  const currentConditionsQuery = useQuery({
+  const currentConditionsQuery = useQuery<CurrentConditions, Error>({
     queryKey: ["currentConditions", cityKey],
     enabled: !!cityKey,
     queryFn: () => fetchCurrentConditions(cityKey),

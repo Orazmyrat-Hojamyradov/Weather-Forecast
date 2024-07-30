@@ -1,9 +1,10 @@
 .input-box {
   position: relative;
   background-color: transparent;
-  width: 500px;
+  width: 90%;
   height: 40px;
   margin-right: 5rem;
+  margin-top: 2rem;
   border-bottom: 3px solid white;
 
   .input {
@@ -37,25 +38,99 @@
     height: 100vh;
     backdrop-filter: blur(4px);
     margin-top: 2rem;
+    z-index: 999;
 
     .locations {
-      margin-right: 5rem;
-
-
-
+      margin: auto;
 
       .location {
         font-size: 2rem;
         text-align: center;
         list-style: none;
-        margin: .5rem;
-        padding: .25rem;
-        transition: font-size .3s ease-in-out; 
+        margin: 0.5rem;
+        padding: 0.25rem;
+        transition: font-size 0.3s ease-in-out;
 
-
-        &:hover{
+        &:hover {
           font-size: 2.3rem;
           cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .input-box {
+    margin: auto;
+    width: 350px;
+    margin-right: 2rem;
+  }
+  .dropdown {
+    .dropdown-menu {
+      top: 5vh;
+      left: 7.5rem;
+      width: 70%;
+      max-height: 30vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+      .locations {
+        padding: 0;
+        .location {
+          padding: 0;
+          font-size: 1.5rem;
+
+          &:hover {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .input-box {
+    width: 200px;
+    margin-right: 1rem;
+  }
+  .dropdown {
+    .dropdown-menu {
+      max-width: 60%;
+
+      .locations {
+        padding: 0;
+        .location {
+          padding: 0;
+          font-size: 1.25rem;
+
+          &:hover {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .dropdown {
+    .dropdown-menu {
+      max-width: 80%;
+      left: 20%;
+      padding-inline-start: 0;
+      .locations {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        .location {
+          margin: auto;
+          font-size: 1.25rem;
+
+          &:hover {
+            font-size: 1.5rem;
+          }
         }
       }
     }

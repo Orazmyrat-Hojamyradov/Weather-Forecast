@@ -17,6 +17,10 @@
   color: white;
 }
 
+.locations {
+  width: fit-content;
+}
+
 .location {
   font-size: 60px;
   color: white;
@@ -31,4 +35,40 @@
 .location-icon {
   width: 70px;
   height: 70px;
+}
+
+.loading {
+  text-align: center;
+  margin: auto;
+  font-size: 2rem;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .location-box {
+    width: 70%;
+    max-width: 350px;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+
+    .date-time {
+      font-size: 1.25rem;
+    }
+    .location {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .location-box {
+    gap: 0;
+  }
+  .date-time {
+    width: 170px;
+  }
+  .temperature {
+    font-size: 70px;
+  }
 }

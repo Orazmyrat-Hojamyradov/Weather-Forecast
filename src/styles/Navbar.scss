@@ -9,11 +9,33 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
 .logo {
   margin-left: 5rem;
-  width: 30px;
-  height: 30px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobile {
+    display: block;
+    width: 500px;
+    margin-bottom: 1rem;
+  }
+  .logo {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    margin-left: 1rem;
+    img {
+      width: 70px;
+    }
+  }
 }
